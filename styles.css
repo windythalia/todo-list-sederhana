@@ -1,0 +1,85 @@
+body {
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #F4F4F4;
+    box-sizing: border-box;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    gap: 4rem;
+}
+
+.container {
+    border: 1px solid black;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: #FFFF;
+    width: 100%;
+    max-width: 540px;
+}
+
+.list-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F4F4F4;
+    padding-left: 20px;
+    margin-bottom: 25px;
+    padding: 10px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
+
+
+#list-input {
+    outline: none;
+    border: none;
+    background: transparent;
+}
+
+#add {
+    background-color: #cfcfcf;
+    border: none;
+    outline: none;
+    padding: 10px 30px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+ul li{
+    list-style: none;
+    padding: 12px 8px 12px 50px;
+    font-size: 15px;
+    user-select: none;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li:before {
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    background-image: url(src/circle.svg);
+    background-size: cover;
+    background-position: center;
+    left: 8px;
+    top: 9px;
+}
+
+ul li.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+
+ul li.checked:before {
+    background-image: url(src/check-circle.svg);
+}
+
