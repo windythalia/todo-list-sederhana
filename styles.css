@@ -3,17 +3,23 @@
     --bg-container: #FFFFFF;      /* Warna kotak putih */
     --text-color: #333;           /* Warna teks */
     --input-bg: #F4F4F4;          /* Warna kolom input */
-    --icon-bg: hsl(47, 100%, 83%);/* Background icon matahari */
-    --icon-color: #e79f02;        /* Warna icon matahari */
+    --theme-bg: hsl(47, 100%, 83%);/* Background icon matahari */
+    --border: 2px solid #be27b4;
+    --button-add: #f8b2f3;
+    --bg-hover: #f150e7;
+    --bg-btn: #e1e1e1;
 }
 
 .dark-mode {
-    --bg-body: #2d3436;
-    --bg-container: #1e272e;
+    --bg-body: #404040;
+    --bg-container: #282828;
     --text-color: #dfe6e9;
-    --input-bg: #4b6584;          /* Input jadi agak gelap */
-    --icon-bg: #4b4b4b;           /* Background icon bulan */
-    --icon-color: #f1c40f;        /* Warna icon bulan */
+    --input-bg: #181818;          /* Input jadi agak gelap */
+    --theme-bg: #4b4b4b;           /* Background icon bulan */
+    --border: 2px solid #2e2d2e;
+    --button-add : #b3b3b3;
+    --bg-hover: #e9e9e9;
+    --bg-btn: #4b4b4b;
 }
 
 body {
@@ -31,14 +37,22 @@ body {
     box-sizing: border-box;
 }
 
+#theme-icon {
+    background-color: var(--theme-bg);
+    color: var(--theme-color);
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+
 header {
     display: flex;
     justify-content: space-between;
     gap: 4rem;
+    font-size: 18px;
 }
 
 .container {
-    border: 2px solid #be27b4;
     padding: 25px;
     border-radius: 25px;
     background-color: #FFFF;
@@ -46,14 +60,7 @@ header {
     max-width: 540px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     background-color: var(--bg-container);
-}
-
-#icon-sun {
-    color: #e79f02;
-    background-color: hsl(47, 100%, 83%);
-    border-radius: 50%;
-    padding: 10px;
-    cursor: pointer;
+    border: var(--border);
 }
 
 .list-content {
@@ -65,7 +72,7 @@ header {
     margin-bottom: 25px;
     padding: 10px;
     border-radius: 15px;
-    border: 1px solid black;
+    border: 1px solid rgba(159, 159, 159, 0.434);
     background-color: var(--input-bg);
 }
 
@@ -74,9 +81,9 @@ header {
     outline: none;
     border: none;
     background: transparent;
-    font-size: 15px;
+    font-size: 16px;
     padding: 5px;
-    color: var(--text-color); /* Teks input ikut berubah warna */
+    color: var(--text-color);
 }
 
 .theme-icon {
@@ -89,7 +96,7 @@ header {
 }
 
 button {
-    background-color: #dfdede;
+    background-color:var(--button-add);
     border: none;
     outline: none;
     padding: 10px 20px;
@@ -99,14 +106,18 @@ button {
 }
 
 button:hover {
-    background-color: #b5b5b5;
+    background-color: var(--bg-hover);
 }
 
+ul{
+    padding: 0;
+    margin: 0;
+}
 
 ul li{
     list-style: none;
     padding: 12px 8px 12px 50px;
-    font-size: 15px;
+    font-size: 16px;
     user-select: none;
     cursor: pointer;
     display: flex;
@@ -130,6 +141,7 @@ ul li:before {
 ul li.checked {
     color: #555;
     text-decoration: line-through;
+    
 }
 
 ul li.checked:before {
@@ -141,14 +153,15 @@ ul li span {
     right: 0;
     width: 40px;
     height: 40px;
-    font-size: 20px;
+    font-size: 25px;
     color: #555;
     line-height: 35px;
     text-align: center;
     border-radius: 50%;
+    color: var(--text-color);
 }
 
 ul li span:hover {
-    background: #edeef0;
+    background: var(--bg-btn);
 }
 
